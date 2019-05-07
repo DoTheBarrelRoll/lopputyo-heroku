@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8" />
+    <title>Movie Rater</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Movie Rater</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                    <% if (username) { %>
+                        <a class="nav-item nav-link">Logged in as <%= username %></a> 
+                        <a class="nav-item nav-link" href="/movie/add">Add a movie</a>
+                        <a class="nav-item nav-link text-danger" href="/logout">Log out</a>
+                    <% } else { %>
+                        <a class="nav-item nav-link" href="/login">Login</a>
+                        <a class="nav-item nav-link" href="/register">Register</a>
+                    <% } %>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top: 8%;">
+            <% if(errors){ %>
+                <% errors.forEach(function(error) { %>
+                    <p><%= error.msg %></p>
+                <% }); %>
+            <% } %>
+        <form class="form-control" method="POST" action="/movie/add">
+            <div class="form-group">
+                <label>Movie title</label>
+                <input type="text" name="title" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+                <label>Summary</label>
+                <input type="text" name="summary" class="form-control" placeholder="Write something about this movie">
+            </div>
+            <div class="form-group">
+                <label>Genre</label>
+                <input type="text" name="Genre" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+                <label>Director</label>
+                <input type="text" name="director" class="form-control" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label>Release date</label>
+                <input type="text" name="releasedate" class="form-control" placeholder="">
+            </div>
+            <button class="btn btn-primary" type="submit">Submit movie</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
