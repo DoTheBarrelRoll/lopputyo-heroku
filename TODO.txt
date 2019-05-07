@@ -1,5 +1,0 @@
-// 1. Luo funktio käyttäjän rekisteröintiin
-2. Luo funktio sisäänkirjautumiseen
-    2.1 (Google Auth)
-// 3. Arvostelujen renderöinti elokuvien EJS sivuille
-4. Arvostelujen luominen

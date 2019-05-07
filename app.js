@@ -35,16 +35,8 @@ console.log("DB connection....");
 mongoose.connect(dbConfig.url, {
     useNewUrlParser: true
 });
-//app.use(cookieParser());
 
-/*Session käyttöönotto
-  Sessio toimii siten että luotaessa sessio syntyy selaimelle automaattisesti cookie jonka
-  nimi on connect.sid (sessionid). Se ylläpitää yhteyttä palvelimella olevaan sessioon
-  sen sisältämän sessioid:n avulla.
-  Itse sessio sisältää sessiomuuttujia, joita voidaan lukea siirryttäessä sivulta toiselle.
-  Jos sessiomuuttujana on vaikka salasana, niin sivuille siirryttäessä voidaan tutkia onko
-  salasana oikea ja jos on, päästetään käyttäjä sivulle.
-*/
+// Session käyttöönotto
 app.use(session({
     secret: 'movieapp4201337',
     cookie: {
@@ -58,8 +50,7 @@ app.use(validator()); // lomakevalidaattorin käyttöönotto
 
 // Reitit eri sivuille
 app.use('/', index);
-//app.use('/movie/', moviepage);
-//app.use('/register', register);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
