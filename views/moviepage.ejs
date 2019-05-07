@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                     <% if (username) { %>
-                        <a class="nav-item nav-link">Logged in as <%= username %></a>
+                        <a class="nav-item nav-link text-primary">Logged in as <%= username %></a>
                         <a class="nav-item nav-link" href="/movie/add">Add a movie</a>
                         <a class="nav-item nav-link text-danger" href="/logout">Log out</a>
                     <% } else { %>
@@ -43,7 +43,7 @@
                                 <h5>Genre: </h4><%= leffa.genre %> <br><br>
                                     <h5>Director: </h4><%= leffa.director %> <br><br>
                                         <h5>Released in: </h4><%=leffa.releaseDate %> <br>
-                                            <a href="/movie/<%= leffa._id%>/rate">Rate this movie</a>
+                                            <a href="/movie/<%= leffa._id%>/rate" class="btn btn-primary" style="margin-top: 10px;">Rate this movie</a>
                                             <% }); %>
                         
                     </div>
