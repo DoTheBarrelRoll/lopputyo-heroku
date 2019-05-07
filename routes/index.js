@@ -240,7 +240,7 @@ router.post('/login', (req, res) => {
     } else {
         // Tarkistetaan löytyykö käyttäjää tietokannasta
         User.findOne({ username: req.body.username }, (err, user) => {
-            if (user.username.length) {
+            if (user) {
                 // Jos käyttäjä löytyy, tarkistetaan että annettu salasana on oikein
                 var auth = bcrypt.compareSync(req.body.pass1, user.password);
                 if (auth == true) {
