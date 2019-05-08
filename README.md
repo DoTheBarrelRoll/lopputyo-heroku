@@ -8,7 +8,7 @@ Tämä projekti on tehty NodeJS kurssin lopputyöksi. Projektissa on käytetty e
 * MongoDB
 * EJS
 
-Käytin backendin esimerkkinä harjoitus 4:n tiedostoja ja muokkasin niitä omiin tarpeisiini. Kaikki muu on tehty oman kokemuksen pohjalta ja erilaisia tutoriaaleja tarvittaessa käyttäen, mutta mitään koodia ei ole suoraan kopioitu 
+Käytin backendin esimerkkinä Node.js kurssin harjoitus 4:n tiedostoja ja muokkasin niitä omiin tarpeisiini. Kaikki muu on tehty oman kokemuksen pohjalta ja erilaisia tutoriaaleja tarvittaessa käyttäen, mutta mitään koodia ei ole suoraan kopioitu 
 
 Tämä repository on kytkettynä Heroku-palveluun, joka ylläpitää sovellusta osoitteessa https://movie-rater-node.herokuapp.com/
 
@@ -21,10 +21,8 @@ module.exports = {
 }
 ```
 
-Käynnistä sovellus ajamalla `node app.js`. Nyt voit aloittaa sovelluksen käyttämisen.
+Käynnistä sovellus ajamalla ensin `node install` moduulien asennusta varten ja sen jälkeen `node app.js`. Nyt voit aloittaa sovelluksen käyttämisen.
 
 ### Huomautuksia
 
 Koska sovellus on julkisesti saatavilla ja ei-kaupallisessa käytössä, en ota minkäänlaista vastuuta sovelluksen sisällöstä. Asiaton sisältö poistetaan sitä mukaan, kun huomaan sitä ilmestyvän. Käytä sovellusta omalla vastuullasi.
-
-Sovelluksessa on bugi, joka aiheuttaa express-session -muuttujan "vuotamisen" kaikille clienteille (Toinen käyttäjä saattaa saada toisen käyttäjän käyttäjänimen kun liikkuu sivujen välillä, näkyy vasemmassa yläkulmassa)
