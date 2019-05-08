@@ -77,7 +77,7 @@ router.post('/movie/add', (req, res) => {
 
 // Elokuvien omat sivut ID:n mukaan
 router.get('/movie/:id', (req, res) => {
-
+    sess = req.session;
     // Etsitään elokuva id:n perusteella ja näytetään sen tiedot ja arvostelut sen omalla sivulla
     Movie.find({ _id: req.params.id }, (err, leffa) => {
         Rating.find({ movieId: req.params.id}, (errs, arviot) => {
